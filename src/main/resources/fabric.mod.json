@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "vanillaflighthud",
+  "version": "${version}",
+  "name": "VanillaFlightHud",
+  "description": "",
+  "authors": [
+    "LucasJoel1"
+  ],
+  "contact": {
+    "repo": "https://github.com/Lucas/VanillaFlightHud"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/vanillaflighthud/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "tech.lucasjoel.vanillaflighthud.client.VanillaFlightHudClient"
+    ]
+  },
+  "mixins": [
+    "vanillaflighthud.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
