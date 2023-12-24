@@ -1,4 +1,4 @@
-package tech.lucasjoel.vanillaflighthud.client;
+package tech.lucasjoel.lucasflighthud.client;
 
 import net.minecraft.client.gui.GuiGraphics;
 

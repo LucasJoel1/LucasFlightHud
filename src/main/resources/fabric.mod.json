@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "id": "vanillaflighthud",
+  "id": "flighthud",
   "version": "${version}",
-  "name": "VanillaFlightHud",
+  "name": "FlightHud",
   "description": "",
   "authors": [
     "LucasJoel1"
   ],
   "contact": {
-    "repo": "https://github.com/Lucas/VanillaFlightHud"
+    "repo": "https://github.com/LucasJoel1/LucasFlightHud"
   },
   "license": "All-Rights-Reserved",
-  "icon": "assets/vanillaflighthud/icon.png",
+  "icon": "assets/flighthud/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "tech.lucasjoel.vanillaflighthud.client.VanillaFlightHudClient"
+      "tech.lucasjoel.lucasflighthud.client.LucasFlightHudClient"
     ]
   },
   "mixins": [
-    "vanillaflighthud.mixins.json"
+    "lucasflighthud.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
