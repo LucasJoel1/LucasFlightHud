@@ -22,7 +22,6 @@ public class LucasFlightHudClient implements ClientModInitializer {
     AtomicInteger velCol = new AtomicInteger();
     AtomicDouble cappedVel = new AtomicDouble();
     AtomicInteger maxBlockHeight = new AtomicInteger();
-    AtomicReference<String> CompassDirection = new AtomicReference<>("");
 
 
 
@@ -73,16 +72,14 @@ public class LucasFlightHudClient implements ClientModInitializer {
             assert mc.player != null;
             if (mc.player.isFallFlying()) {
                 drawContext.fill((int) (screenWidth.get() * 0.833333333) + 3, (int) (screenHeight.get() * 0.5), (int) ((screenWidth.get() * 0.833333333) + (screenWidth.get() * 0.083333333333)), (int) adjustedPlayerCameraYaw.get(), 0x7F008000);
-                drawContext.fill((int) ((screenWidth.get() * 0.833333333) + (screenWidth.get() * 0.083333333333)), (int) (screenHeight.get() * 0.166666667), screenWidth.get(), (int) (screenHeight.get() * 0.22), 0x4F000000);
                 Util.drawOutlineRect(drawContext, (int) (screenWidth.get() * 0.833333333), (int) (screenHeight.get() * 0.166666667), (int) (screenWidth.get() * 0.083333333333), (int) (screenHeight.get() * 0.666666667), 3, 0xFFFFFFFF);
                 drawContext.drawString(mc.font, String.format("%.2f", (-playerCameraYaw.get() + 0.5) * 2), (int) (screenWidth.get() * 0.833333333) + 8, (int) (screenHeight.get() * 0.666666667) + (int) (screenHeight.get() * 0.166666667) + 10, 0xFFFFFFFF);
                 drawContext.fill((int) (screenWidth.get() * 0.185185185) - (int) (screenWidth.get() * 0.083333333333), (int) (screenHeight.get() * 0.166666667) + (int) (screenHeight.get() * 0.666666667) - (int) ((screenHeight.get() * 0.666666667) * (cappedVel.get() / 50)), (int) (screenWidth.get() * 0.185185185), (int) (screenHeight.get() * 0.166666667) + (int) (screenHeight.get() * 0.666666667), velCol.get());
                 Util.drawOutlineRect(drawContext, (int) (screenWidth.get() * 0.185185185) - (int) (screenWidth.get() * 0.083333333333), (int) (screenHeight.get() * 0.166666667), (int) (screenWidth.get() * 0.083333333333), (int) (screenHeight.get() * 0.666666667), 3, 0xFFFFFFFF);
                 drawContext.drawString(mc.font, String.format("%.2f", playerVelocity.get()), (int) (screenWidth.get() * 0.185185185) - (int) (screenWidth.get() * 0.083333333333) + 8, (int) (screenHeight.get() * 0.666666667) + (int) (screenHeight.get() * 0.166666667) + 10, 0xFFFFFFFF);
 
-
-                drawContext.drawString(mc.font, "Height: " + maxBlockHeight.get(), (int) (screenWidth.get() * 0.925), (int) (screenHeight.get() * 0.175) + 10, 0xFFFFFFFF);
-                drawContext.drawString(mc.font, "Direction: " + String.valueOf(mc.player.getDirection()).toUpperCase().charAt(0), (int) (screenWidth.get() * 0.925), (int) (screenHeight.get() * 0.175), 0xFFFFFFFF);
+                drawContext.drawString(mc.font, "Height: " + maxBlockHeight.get(), (int) (screenWidth.get() * 0.833333333) + 8, (int) (screenHeight.get() * 0.666666667) + (int) (screenHeight.get() * 0.166666667) + 20, 0xFFFFFFFF);
+                drawContext.drawString(mc.font, "Direction: " + String.valueOf(mc.player.getDirection()).toUpperCase().charAt(0), (int) (screenWidth.get() * 0.185185185) - (int) (screenWidth.get() * 0.083333333333) + 8, (int) (screenHeight.get() * 0.666666667) + (int) (screenHeight.get() * 0.166666667) + 20, 0xFFFFFFFF);
             }
         });
     }
