@@ -1,17 +1,19 @@
 {
   "schemaVersion": 1,
-  "id": "flighthud",
+  "id": "lucasflighthud",
   "version": "${version}",
-  "name": "FlightHud",
-  "description": "",
+  "name": "Lucas's Flight Hud",
+  "description": "A mod that adds a basic hud for elytra flight",
   "authors": [
     "LucasJoel1"
   ],
   "contact": {
-    "repo": "https://github.com/LucasJoel1/LucasFlightHud"
+    "repo": "https://github.com/LucasJoel1/LucasFlightHud",
+    "issues": "https://github.com/LucasJoel1/LucasFlightHud/issues",
+    "homepage": "https://github.com/LucasJoel1/LucasFlightHud"
   },
   "license": "All-Rights-Reserved",
-  "icon": "assets/flighthud/icon.png",
+  "icon": "assets/lucasflighthud/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
@@ -25,5 +27,10 @@
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
     "minecraft": "${minecraft_version}"
+  },
+  "custom": {
+    "modmenu": {
+      "update_checker": true
+    }
   }
 }

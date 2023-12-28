@@ -1,6 +1,7 @@
-package tech.lucasjoel.lucasflighthud.client;
+package tech.lucasjoel.lucasflighthud.client.util;
 
 import com.mojang.blaze3d.platform.WindowEventHandler;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 
 public class Util {
