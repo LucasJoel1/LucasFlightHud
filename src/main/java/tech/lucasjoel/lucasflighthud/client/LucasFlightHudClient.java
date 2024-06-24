@@ -6,10 +6,9 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.border.BorderStatus;
 import net.minecraft.world.level.levelgen.Heightmap;
 import tech.lucasjoel.lucasflighthud.client.util.Util;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class LucasFlightHudClient implements ClientModInitializer {
     int screenHeight;
@@ -25,6 +24,7 @@ public class LucasFlightHudClient implements ClientModInitializer {
     public void onInitializeClient() {
         System.out.println("me do da work");
         Minecraft mc = Minecraft.getInstance();
+
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             assert mc.player != null;
             try {

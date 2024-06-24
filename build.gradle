@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.2-SNAPSHOT'
+    id 'fabric-loom' version '1.7.0-alpha.6'
     id 'maven-publish'
 }
 
@@ -15,9 +15,6 @@ repositories {
     maven {
         url = "https://maven.parchmentmc.org"
     }
-    maven {
-        url = "https://maven.terraformersmc.com/releases/"
-    }
 }
 
 dependencies {
@@ -25,15 +22,12 @@ dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings loom.layered {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-1.20.2:2023.10.08@zip")
+        parchment("org.parchmentmc.data:parchment-1.21:2024.06.23@zip")
     }
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-    // Extra API's
-    modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 }
 
 processResources {
